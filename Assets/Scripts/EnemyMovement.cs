@@ -7,13 +7,11 @@ public class EnemyMovement : MonoBehaviour
     //cache
     [SerializeField] float moveSpeed = 1;
     Rigidbody2D myRigidBody;
-    Collider2D myCollider;
-    BoxCollider2D myBoxCollider;
+    Transform transform;
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
-        myCollider = GetComponent<Collider2D>();
-        myBoxCollider = GetComponent<BoxCollider2D>();
+        transform = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -35,5 +33,13 @@ public class EnemyMovement : MonoBehaviour
     bool isFacingRight()
     {
         return transform.localScale.x > 0;
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.transform.position.y > transform.position.y+0.3f)
+        {
+            Destroy(gameObject);
+        }
     }
 }

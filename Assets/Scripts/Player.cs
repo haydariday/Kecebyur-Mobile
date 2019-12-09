@@ -124,6 +124,7 @@ public class Player : MonoBehaviour
         if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Death")))
         {
             isAlive = false;
+            FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
     }
 }

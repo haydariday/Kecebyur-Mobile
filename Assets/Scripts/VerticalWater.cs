@@ -16,7 +16,7 @@ public class VerticalWater : MonoBehaviour
         float yMove = scrollUpRate * Time.deltaTime;
         transform.Translate(new Vector2(0f, yMove));
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         StartCoroutine(LoadGameOver());
     }
@@ -26,5 +26,5 @@ public class VerticalWater : MonoBehaviour
         yield return new WaitForSecondsRealtime(LevelLoadDelay);
         Time.timeScale = 1f;
         SceneManager.LoadScene(3);
-    }
+    }*/
 }
