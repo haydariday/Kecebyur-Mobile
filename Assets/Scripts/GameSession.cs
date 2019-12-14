@@ -29,6 +29,7 @@ public class GameSession : MonoBehaviour
     {
         livesText.text = playerLives.ToString();
         scoreText.text = score.ToString();
+        persenText.text = "0%";
     }
 
     public void AddToScore(int pointsToAdd)
@@ -43,9 +44,7 @@ public class GameSession : MonoBehaviour
 
     public void AddToPersen(float stunRate)
     {
-        if (stunRate == 1f)
-            persenText.text = "0%";
-        else if (stunRate == 2f)
+        if (stunRate == 2f)
             persenText.text = "25%";
         else if (stunRate == 3f)
             persenText.text = "50%";
@@ -65,6 +64,7 @@ public class GameSession : MonoBehaviour
             ResetGameSession(3);
         }
     }
+   
     public void ResetGameSession(int i)
     {
         SceneManager.LoadScene(i);
@@ -76,5 +76,6 @@ public class GameSession : MonoBehaviour
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentScene);
         livesText.text = playerLives.ToString();
+        persenText.text = "0%";
     }
 }

@@ -30,6 +30,11 @@ public class Pause : MonoBehaviour
         pausePanel.SetActive(true);
         //Disable scripts that still work while timescale is set to 0
     }
+    public void PlayerExit()
+    {
+        FindObjectOfType<GameSession>().ResetGameSession(0);
+        Time.timeScale = 1;
+    }
     private void ContinueGame()
     {
         Time.timeScale = 1;
