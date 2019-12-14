@@ -8,6 +8,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float moveSpeed = 1;
     Rigidbody2D myRigidBody;
     Transform transform;
+    [SerializeField] AudioClip killSound;
+    [SerializeField] int pointsForKill;
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
@@ -40,6 +42,8 @@ public class EnemyMovement : MonoBehaviour
         transform.localScale = new Vector2(-(Mathf.Sign(myRigidBody.velocity.x)), 1f);
         if (col.gameObject.transform.position.y > transform.position.y+0.3f)
         {
+            SoundManager.instance.PlaySingle(killSound);
+            FindObjectOfType<GameSession>().AddToScore(pointsForKill);
             Destroy(gameObject);
         }
     }

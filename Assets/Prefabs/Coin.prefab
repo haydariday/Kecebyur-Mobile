@@ -141,3 +141,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96071075a714af74c82b6c0869bfe4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickUp: {fileID: 8300000, guid: 8bbda73f8627e6147bfecba8a85b21d1, type: 3}
+  pointsForCoins: 1

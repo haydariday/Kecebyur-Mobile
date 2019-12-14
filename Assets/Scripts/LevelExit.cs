@@ -18,6 +18,6 @@ public class LevelExit : MonoBehaviour
         yield return new WaitForSecondsRealtime(LevelLoadDelay);
         Time.timeScale = 1f;
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        FindObjectOfType<GameSession>().ResetGameSession(currentSceneIndex + 1);
     }
 }

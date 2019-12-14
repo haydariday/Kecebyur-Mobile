@@ -1114,21 +1114,21 @@ Tilemap:
       e33: 1
   - m_RefCount: 0
     m_Data:
-      e00: 0.00074777193
-      e01: 0.00074777193
-      e02: NaN
-      e03: 0
-      e10: 0
+      e00: 2.835165e-15
+      e01: 0
+      e02: 0
+      e03: 0.0000000018695587
+      e10: 8.41e-43
       e11: 0
-      e12: NaN
-      e13: 0
-      e20: 0.00086869206
-      e21: 0.00086869206
-      e22: -5.0800596e-26
-      e23: 6755.1875
+      e12: 0
+      e13: 4.5904e-41
+      e20: 0
+      e21: 0
+      e22: 9.007014e+34
+      e23: 0
       e30: 0
       e31: 0
-      e32: 4.5912e-41
+      e32: 8.41e-43
       e33: 0
   m_TileColorArray:
   - m_RefCount: 65
@@ -1185,6 +1185,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

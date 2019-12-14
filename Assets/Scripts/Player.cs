@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public float doubleJumpSpeed = 3f;
     public AudioClip hitSound;
     public AudioClip jumpSound;
-    public float ouch = 1f;
+    public double ouch = 1f;
     public float stunTime = 1f;
     public float stunRate = 1f;
     public int numOfJump = 0;
@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        FindObjectOfType<GameSession>().AddToPersen(stunTime);
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         myBodyCollider = GetComponent<CapsuleCollider2D>();
@@ -104,9 +105,10 @@ public class Player : MonoBehaviour
                 || myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Death")))
             {
                 SoundManager.instance.PlaySingle(hitSound);
-                myRigidbody.velocity = new Vector2(ouch, ouch);
+                myRigidbody.velocity = new Vector2((float)ouch*(-joystick.Horizontal), (float)ouch);
                 isHurting = true;
                 stunTime = Time.time + stunRate;
+                FindObjectOfType<GameSession>().AddToPersen(stunRate+1);
             }
         }else if (isHurting)
         {
@@ -116,7 +118,7 @@ public class Player : MonoBehaviour
                 if (stunRate < 5 )
                 {
                     stunRate++;
-                    ouch = (ouch * 2)-(ouch/2);
+                    ouch = (ouch * 2.5)-(ouch/2);
                 }
             }
         }
