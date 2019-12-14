@@ -12,7 +12,6 @@ public class GameSession : MonoBehaviour
     [SerializeField] Text livesText;
     [SerializeField] Text scoreText;
     [SerializeField] Text persenText;
-    [SerializeField] Text time;
     private void Awake()
     {
         int numGameSessions = FindObjectsOfType<GameSession>().Length;
@@ -41,10 +40,7 @@ public class GameSession : MonoBehaviour
         }
         scoreText.text = score.ToString();
     }
-    public void Update()
-    {
-        time.text = Time.time.ToString();
-    }
+
     public void AddToPersen(float stunRate)
     {
         if (stunRate == 1f)
