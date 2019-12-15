@@ -80,6 +80,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -92,7 +93,7 @@ SpriteRenderer:
   m_SortingLayerID: 1753395223
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6861797250112410188, guid: 4aa16c4d4f500404b8c724c6e61826ec,
+  m_Sprite: {fileID: -5101735064093581049, guid: 9c65b72a6b1dc874e93e51e29b010b0c,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -158,7 +159,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.0005, y: 1.002}
     newSize: {x: 0.22, y: 0.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -181,10 +182,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 7
   jumpSpeed: 17
-  doubleJumpSpeed: 13
+  doubleJumpSpeed: 10
   hitSound: {fileID: 8300000, guid: 64a53e5a20c5cf443944edaf3cb9f348, type: 3}
   jumpSound: {fileID: 8300000, guid: 8065b105749300a499e2f353d9e7e19d, type: 3}
   ouch: 1
   stunTime: 1
   stunRate: 1
+  numOfJump: 0
   invulnerabilityTime: 2
+  joystick: {fileID: 0}

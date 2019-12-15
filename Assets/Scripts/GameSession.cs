@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameSession : MonoBehaviour
 {
     [SerializeField] int playerLives = 3;
-    [SerializeField] int score = 0;
+    [SerializeField] public int score = 0;
 
     [SerializeField] Text livesText;
     [SerializeField] Text scoreText;
