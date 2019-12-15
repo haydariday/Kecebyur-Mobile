@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  killSound: {fileID: 8300000, guid: cb4a4bbf45f4af6448590ab8d739fd86, type: 3}
+  killSound: {fileID: 8300000, guid: 8bbda73f8627e6147bfecba8a85b21d1, type: 3}
   pointsForKill: 1
 --- !u!61 &4756113071753439954
 BoxCollider2D:

@@ -51,8 +51,12 @@ public class Player : MonoBehaviour
     }
     private void Run()
     {
-        //float controlThrow = CrossPlatformInputManager.GetAxis("Horizontal"); // nilai diantara -1 dengan +1
+        float controlThrow = CrossPlatformInputManager.GetAxis("Horizontal"); // nilai diantara -1 dengan +1
         Vector2 playerVelocity = new Vector2(joystick.Horizontal * runSpeed, myRigidbody.velocity.y);
+        if (controlThrow !=0)
+        {
+            playerVelocity = new Vector2(joystick.Horizontal * runSpeed, myRigidbody.velocity.y);
+        }
         myRigidbody.velocity = playerVelocity;
 
         //running animation

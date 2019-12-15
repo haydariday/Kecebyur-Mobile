@@ -68,6 +68,7 @@ public class GameSession : MonoBehaviour
     public void ResetGameSession(int i)
     {
         SceneManager.LoadScene(i);
+        TampilkanScore.skor = score;
         Destroy(gameObject);
     }
     private void TakeLife()
