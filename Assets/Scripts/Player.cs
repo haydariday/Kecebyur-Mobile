@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Hurt();
         if (!isAlive || isHurting) { return; }
@@ -70,24 +70,13 @@ public class Player : MonoBehaviour
             || myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Thin Ground"))
             || myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Obstacle"));
         if (onTheGround)
-        {
             canJump = true;
-            if (CrossPlatformInputManager.GetButtonDown("Jump"))
-            {
-                SoundManager.instance.PlaySingle(jumpSound);
-                Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
-                myRigidbody.velocity = jumpVelocityToAdd;
-            }
-        }
-        else if (canJump)
+        if (onTheGround && joystick.Vertical >= 0.5f)
         {
-            if (CrossPlatformInputManager.GetButtonDown("Jump"))
-            {
-                SoundManager.instance.PlaySingle(jumpSound);
-                canJump = false;
-                Vector2 jumpVelocityToAdd = new Vector2(0f, doubleJumpSpeed);
-                myRigidbody.velocity = jumpVelocityToAdd;
-            }
+            SoundManager.instance.PlaySingle(jumpSound);
+            Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
+            myRigidbody.velocity += jumpVelocityToAdd;
+            canJump = false;
         }
         myAnimator.SetBool("Jumping", !canJump);
     }
